@@ -1,0 +1,1 @@
+add_executable(strreplase-program main.cpp)
