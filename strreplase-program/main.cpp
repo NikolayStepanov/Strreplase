@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <iostream>
 
 using namespace std;
@@ -64,9 +65,15 @@ void s_move(char* d, const char* s, size_t n) {
 
 int main()
 {
-	char strA[256] = "ABABCDCDCD--ABABCD__";
+	const int MAX = 256;
+
+	char strA[MAX] = "ABABCDCDCD--ABABCD__";
 	char str_shab[] = "ABCD";
 	char str_zam[] = "0AB";
+
+	char strA2 [MAX];
+	char str_shab2 [MAX];
+	char str_zam2[MAX];
 
 	cout << "Text: " << strA << endl;
 	cout << "Substring: " << str_shab << endl;
@@ -75,5 +82,17 @@ int main()
 	s_replace(strA, str_shab, str_zam);
 	cout << "Result: " << strA << endl;
 
+	cout << "--------------------"<< endl;
+	cout << "Text: ";
+	gets_s(strA2);
+	cout << "Substring: ";
+	gets_s(str_shab2);
+	cout << "Replacement string: ";
+	gets_s(str_zam2);
+
+	s_replace(strA2, str_shab2, str_zam2);
+	cout << "Result: " << strA2 << endl;
+
+	system("pause");
 	return 0;
 }
